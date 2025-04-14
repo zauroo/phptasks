@@ -1,5 +1,5 @@
 <?php
-$isdifadecinin_yasi = 150;
+$isdifadecinin_yasi = -1;
 $balaca = 7;
 $mektelbli = 17;
 $telebe = 22;

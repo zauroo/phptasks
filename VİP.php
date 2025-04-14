@@ -1,11 +1,15 @@
 <?php
 
-$is_VIP = false; 
-$musterinin_buccesi = 3000; 
+$is_VIP = True;
+$musterinin_buccesi = -3000;
 
-if ($is_VIP) { 
+if ($is_VIP) {
     if ($musterinin_buccesi < 5000) {
         echo "Endirim: " . ($musterinin_buccesi * 10 / 100) . " AZN";
+        if ($musterinin_buccesi < 0) {
+            echo "Büdcə mənfi ola bilməz!";
+            exit;
+        }
     } elseif ($musterinin_buccesi >= 5000 && $musterinin_buccesi <= 10000) {
         echo "Endirim: " . ($musterinin_buccesi * 15 / 100) . " AZN";
     } else {
@@ -13,6 +17,10 @@ if ($is_VIP) {
     }
 } else { // Əgər VIP deyilsə
     if ($musterinin_buccesi < 5000) {
+        if ($musterinin_buccesi < 0) {
+            echo "Büdcə mənfi ola bilməz!";
+            exit;
+        }
         echo "Endirim: " . ($musterinin_buccesi * 0 / 100) . " AZN";
     } elseif ($musterinin_buccesi >= 5000 && $musterinin_buccesi <= 10000) {
         echo "Endirim: " . ($musterinin_buccesi * 5 / 100) . " AZN";
